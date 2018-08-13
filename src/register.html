@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trans-Lab</title>
-
-    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +14,7 @@
 </head>
 
 <body>
-    <div class="register-photo" style="background-color:rgb(0,0,0);">
+    <div class="register-photo" style="background-color:rgb(112, 108, 108);">
         <div class="form-container">
             <form action="javascript:void(0)">
                 <h2 class="text-center">
@@ -23,6 +22,7 @@
                 </h2>
                 <h3 class="text-center" style="padding-bottom:40px;">
                     <strong>TRANS-LAB</strong>
+                    <p>REGISTRO DE USUARIO</p>
                 </h3>
                 <div class="form-group">
                     <input  id="email" class="form-control" type="email" aria-describedby="emailHelp"  placeholder="Enter email" style="font-size:16px;">
@@ -32,39 +32,32 @@
                     <input  id="password" class="form-control" type="password" placeholder="Password">
                 </div>
 
+        
                 <div class="form-group">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox">Acepto los términos</label>
-                    </div>
+                    <button onclick="registerWithFirebase()" class="btn btn-primary btn-block" type="submit" style="background-color:rgb(193,169,1);">REGISTRAR</button>
                 </div>
-                <div class="form-group">
-                    <button onclick="loginWithFirebase()" class="btn btn-primary btn-block" type="submit" style="background-color:rgb(193,169,1);">INICIAR SESIÓN</button>
-                </div>
-                <a href="register.html" class="already">Aun no estas registrado ? <span id="redirectRegistry">Registrate aquí.</span></a>
+                
             </form>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script> 
 
-    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBF5p9EqG0_36ncdIWHwzxyOHrxn4YP44U",
-        authDomain: "trans-lab-71885.firebaseapp.com",
-        databaseURL: "https://trans-lab-71885.firebaseio.com",
-        projectId: "trans-lab-71885",
-        storageBucket: "trans-lab-71885.appspot.com",
-        messagingSenderId: "496966917695"
-      };
-      firebase.initializeApp(config);
-    </script>
 
-    <script src="./assets/js/controller.js"></script>
-    <script src="./assets/js/login-sesion.js"></script>
-    <script src="./assets/js/validate.js"></script>
-    <script src="./assets/js/models.js"></script>
-    <script src="./assets/js/views.js"></script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBF5p9EqG0_36ncdIWHwzxyOHrxn4YP44U",
+          authDomain: "trans-lab-71885.firebaseapp.com",
+          databaseURL: "https://trans-lab-71885.firebaseio.com",
+          projectId: "trans-lab-71885",
+          storageBucket: "trans-lab-71885.appspot.com",
+          messagingSenderId: "496966917695"
+        };
+        firebase.initializeApp(config);
+      </script>
+    
+    <script src="/src/assets/js/register.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js?h=995485595b5c9d628be532d975e1975d"></script>
