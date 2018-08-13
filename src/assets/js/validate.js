@@ -1,27 +1,21 @@
-window.validateEmail = function(email){
-    if(email.indexOf('@') < 0){
-        return false;
+
+window.validateEmailAndPassword = () => {
+    
+    emailRegex = /^[-\w.+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    if (emailRegex.test(email.value)) {
+      console.log("is valid");
+      return true;
+    } else {
+      console.log("is invalid");
+      return false;
     }
 
-    const tokens = email.split('@');
-    if(tokens.length != 2){ //Verifica que el correo SÓLO tenga 2 partes, lo que está antes del arroba y después del arroba 
-        return false; //Si es distinto de 2, será false
+    let password = document.getElementById('password').value;
+    if (password.length <= 8) { // Solo acepta hasta 8 carácteres máximo
+        console.log('valid pass');
+        return true;
+    } else {
+        console.log('invalid pass');
+        return false;       
     }
-
-    if(tokens[1].indexOf('.') < 0){
-        return false;
-    }
-
-    const domTokens = tokens[1].split('.');
-    if(domTokens.length != 2){
-        return false;
-    }
-    if(domTokens[0].length < 1){
-        return false
-    }
-    if(domTokens[1].length < 1){
-        return false
-    }
-
-    return true;
 };
