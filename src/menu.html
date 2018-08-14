@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <!-- inicio de menu estilo hamburguesa nobile -->
+  <!-- inicio de menu estilo hamburguesa mobile -->
   <div class="page">
     <header tabindex="0">TRANS - LAB </header>
     <div id="nav-container">
@@ -37,21 +37,19 @@
       <div id="nav-content" tabindex="0">
         <ul>
           <li class="nav-item">
-            <a href="#saldo" i class="fa fa-dollar-sign fa-lg">
-              </i> Ver saldo</a>
+            <a href="#saldo" i class="fa fa-dollar-sign fa-lg"> Ver saldo</a>
           </li>
           <li class="nav-item">
-            <a href="#cal-tar" i class="fa fa-calculator fa-lg"> Calcular Tarifa</a>
+            <a href="#calcularTarifa" i class="fa fa-calculator fa-lg"> Calcular Tarifa</a>
           </li>
           <li class="nav-item">
             <a href="#perfil" i class="fa fa-user fa-lg"> Usuario</a>
           </li>
           <li class="nav-item">
-            <a href="#pre-frec" i class="fa fa-question fa-lg"> Preguntas Frecuentes</a>
+            <a href="#preguntasFrecuentes" i class="fa fa-question fa-lg"> Preguntas Frecuentes</a>
           </li>
           <li class="nav-item">
-            <a href="#" i class="fa fa-home fa-lg">
-              </i> Home</a>
+            <a href="#" i class="fa fa-home fa-lg">Home</a>
           </li>
         </ul>
       </div>
@@ -59,7 +57,7 @@
       <!-- inicio de botones de interaccion  -->
 
       <div class="jumbotron jumbotron-fluid d-table-cell d-flex justify-content-center">
-        <button class="btn btn-primary btn-lg my-auto" type="button">VER SALDO</button>
+        <a class="btn btn-primary btn-lg active" role="button" aria-pressed="true">VER SALDO</a>
       </div>
 
       <div class="jumbotron jumbotron-fluid d-table-cell d-flex justify-content-center">
@@ -73,9 +71,166 @@
       <div class="jumbotron jumbotron-fluid d-table-cell d-flex justify-content-center">
         <button class="btn btn-primary btn-lg my-auto" type="button">PREGUNTAS FRECUENTES</button>
       </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/script.min.js?h=995485595b5c9d628be532d975e1975d"></script>
+
+      <section id="saldo">
+        <div class="container my-3">
+          <div class="row">
+            <form>
+              <input id="saldoBip" class="form-control my-3" type="text" placeholder="numero de tarjeta">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Selecciona</label>
+                </div>
+                <select class="custom-select " id="inputGroupSelect01">
+                  <option selected>Tus opciones.</option>
+                  <option value="1">.</option>
+                  <option value="2">.</option>
+                  <option value="3">.</option>
+                </select>
+              </div>
+          </div>
+          </form>
+          <button type="button" class="btn btn-warning my-9 " onclick="saldoTotal()">VER SALDO</button>
+        </div>
+      </section>
+
+<!-- seccion calcular tarifa -->
+      <section id="calcularTarifa">
+        <div class="container my-3">
+          <div class="row">
+            <input class="form-control my-3" type="text" placeholder="Ingresa n° de tarjeta">
+          </div>
+          <div class="row">
+            <label>Tarifa</label>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Selecciona tarifa</option>
+              <option value="1">Horario alto $ 760</option>
+              <option value="2"> Horario medio $ 680</option>
+              <option value="3"> Horario bajo $ 630</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <label>Tarjeta</label>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>selecciona tarjeta</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+            <button type="button" class="btn btn-warning" onclick="calcularTarifa()">CALCULAR</button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- inicio de perfil usuario  -->
+      <section id="perfil">
+        <div class="jumbotron1 jumbotron-fluid">
+          <div class="container">
+            <div class="text-center">
+              <img src="./assets/img/pic.png" class="rounded-circle" alt="avatar">
+            </div>
+          </div>
+        </div>
+        <!-- muestra de email por defecto del usuario -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="show-email">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- numero de tarjeta bip (ingresar) -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="enter-bip">
+                <input type="text" class="form-control" id="numero-bip" placeholder="N° de tarjeta BIP">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- boton agregar -->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button class="btn btn-primary justify-content-center align-items-center align-content-center" type="button">AGREGAR TARJETA</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="preguntasFrecuentes">
+        <div class="jumbotron1 jumbotron-fluid">
+          <div class="container">
+            <div class="text-center">
+              <span>Preguntas</span>
+              <br>
+              <span>Frecuentes</span>
+            </div>
+          </div>
+          <div id="accordion" role="tablist">
+            <div class="card">
+              <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Collapsible Group Item #1
+                  </a>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Collapsible Group Item #2
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    </section>>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.min.js?h=995485595b5c9d628be532d975e1975d"></script>
 </body>
 
 </html>
