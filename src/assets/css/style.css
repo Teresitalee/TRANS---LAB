@@ -122,5 +122,20 @@ body {
       padding-top: 0%;
     
   }
- 
+ /* estilos al saldo cuadro inner */
+ .mostrarSaldo{
+    background-color:#333;
+  }
+  
+  
+  
+  p.saldo {
+    margin-top: -15px;
+    color: white;
+    font-size: 40px;
+  }
+  
+  .titulo{
+    color: white;
+  }
  
